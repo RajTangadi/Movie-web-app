@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { connectDb } from "./utils/connection.js";
 import userRoute from "./routes/user.route.js";
+import movieRoute from "./routes/movie.route.js";
 
 const app = express();
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/api/user", userRoute);
+app.use("/api", movieRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
