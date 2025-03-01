@@ -11,7 +11,7 @@ export const getAllMovies = async (req, res) => {
 };
 
 // Get sorted movies
-export const sortMovies = async (req, res) => {
+export const getSortedMovies = async (req, res) => {
   const { sortBy } = req.query;
   let sortQuery = {};
 
